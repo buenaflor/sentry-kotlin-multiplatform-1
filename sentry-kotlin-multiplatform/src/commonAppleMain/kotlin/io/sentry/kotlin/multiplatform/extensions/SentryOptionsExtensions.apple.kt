@@ -89,7 +89,8 @@ internal fun CocoaSentryOptions.applyCocoaBaseOptions(options: SentryOptions) {
     failedRequestTargets = options.failedRequestTargets
     failedRequestStatusCodes = options.failedRequestStatusCodes.map {
         SentryHttpStatusCodeRange(
-            min = it.min.convert(), max = it.max.convert()
+            min = it.min.convert(),
+            max = it.max.convert()
         )
     }
 }

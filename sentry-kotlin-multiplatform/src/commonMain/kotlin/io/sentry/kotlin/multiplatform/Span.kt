@@ -2,8 +2,7 @@ package io.sentry.kotlin.multiplatform
 
 import io.sentry.kotlin.multiplatform.protocol.SpanId
 
-public expect interface Span {
-}
+public expect interface Span
 
 public expect val Span.operation: String
 public expect val Span.description: String?

@@ -17,7 +17,9 @@ public actual class StringUtils {
         public actual fun normalizeUUID(uuidString: String): String {
             return if (uuidString == CORRUPTED_NIL_UUID) {
                 PROPER_NIL_UUID
-            } else uuidString
+            } else {
+                uuidString
+            }
         }
     }
 }

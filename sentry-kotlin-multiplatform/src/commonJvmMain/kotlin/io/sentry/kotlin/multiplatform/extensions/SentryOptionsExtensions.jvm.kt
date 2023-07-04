@@ -25,7 +25,6 @@ internal fun SentryOptions.toJvmSentryOptionsCallback(): (JvmSentryOptions) -> U
     }
 }
 
-
 /**
  * Applies the given base SentryOptions to this JvmSentryOption
  * This avoids code duplication during init on Android

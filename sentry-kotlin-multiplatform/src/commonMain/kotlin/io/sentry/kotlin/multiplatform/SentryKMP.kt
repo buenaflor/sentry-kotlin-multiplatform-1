@@ -4,12 +4,6 @@ import io.sentry.kotlin.multiplatform.protocol.Breadcrumb
 import io.sentry.kotlin.multiplatform.protocol.SentryId
 import io.sentry.kotlin.multiplatform.protocol.User
 import io.sentry.kotlin.multiplatform.protocol.UserFeedback
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.currentCoroutineContext
-import kotlinx.coroutines.withContext
-import kotlin.coroutines.AbstractCoroutineContextElement
-import kotlin.coroutines.CoroutineContext
 import kotlin.experimental.ExperimentalObjCRefinement
 import kotlin.native.HiddenFromObjC
 
@@ -141,15 +135,6 @@ public object Sentry {
      */
     public fun startTransaction(name: String, operation: String, bindToScope: Boolean): Span {
         return SentryBridge.startTransaction(name, operation, bindToScope)
-    }
-
-    /**
-     * Apple: returns the active root transaction
-     *
-     * JVM: returns the active transaction or the latest active child span
-     */
-    public fun getSpan(): Span? {
-        return SentryBridge.getSpan()
     }
 
     /**

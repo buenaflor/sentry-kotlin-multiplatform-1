@@ -10,6 +10,7 @@ public expect open class SpanContext {
      * consistent across instances of the span.*/
     // protected val description: String?
 }
+
 /** The name of the operation associated with the span.*/
 public expect val SpanContext.operation: String
 
