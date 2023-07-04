@@ -1,6 +1,6 @@
 package io.sentry.kotlin.multiplatform.protocol
 
-public expect enum class TransactionNameSource {
+public actual enum class TransactionNameSource {
     /**
      * User-defined name
      *

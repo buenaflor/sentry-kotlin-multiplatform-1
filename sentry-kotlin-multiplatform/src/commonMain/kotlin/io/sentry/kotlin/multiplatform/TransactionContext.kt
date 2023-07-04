@@ -2,11 +2,8 @@ package io.sentry.kotlin.multiplatform
 
 import io.sentry.kotlin.multiplatform.protocol.TransactionNameSource
 
-public class TransactionContextAdapter constructor(private val transactionContext: TransactionContext) :
-    TransactionContext by transactionContext
+public expect class TransactionContext : SpanContext
 
-public interface TransactionContext : SpanContext {
-    public val name: String
-    public val transactionNameSource: TransactionNameSource
-    public val parentSampled: Boolean
-}
+public expect val TransactionContext.name: String
+public expect val TransactionContext.transactionNameSource: TransactionNameSource
+public expect val TransactionContext.parentSampled: Boolean?

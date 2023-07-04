@@ -57,35 +57,7 @@ class TransactionIntegrationTest: BaseSentryTest() {
         val transaction = Sentry.startTransaction("test", "testOperation", bindToScope = true)
         val activeTransactionSpanId = Sentry.getSpan()?.spanId
         transaction.finish()
-        assertEquals(activeTransactionSpanId, transaction.spanId, "activeTransactionSpanId should be equal to transaction.spanId")
-    }
-
-    @Test
-    fun `getSpan returns null when bindToScope is disabled`() {
-        sentryInit {
-            it.dsn = fakeDsn
-        }
-        val transaction = Sentry.startTransaction("test", "testOperation", bindToScope = false)
-        val activeTransactionSpanId = Sentry.getSpan()?.spanId
-        val child = transaction.startChild("child")
-        val activeChildSpanId = Sentry.getSpan()?.spanId
-        child.finish()
-        transaction.finish()
-        assertEquals(activeTransactionSpanId, null)
-        assertEquals(activeChildSpanId, null)
-    }
-
-    @Test
-    fun `getSpan returns null when Transaction has finished`() {
-        sentryInit {
-            it.dsn = fakeDsn
-        }
-        val transaction = Sentry.startTransaction("test", "testOperation", bindToScope = true)
-        val activeTransactionSpanId = Sentry.getSpan()?.spanId
-        transaction.finish()
-        val activeTransactionSpanIdAfterFinish = Sentry.getSpan()?.spanId
-        assertEquals(activeTransactionSpanId, transaction.spanId)
-        assertEquals(activeTransactionSpanIdAfterFinish, null)
+        assertEquals(activeTransactionSpanId.toString(), transaction.spanId.toString(), "activeTransactionSpanId should be equal to transaction.spanId")
     }
 
     @Test

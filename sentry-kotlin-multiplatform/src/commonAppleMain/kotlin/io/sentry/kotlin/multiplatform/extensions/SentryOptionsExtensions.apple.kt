@@ -5,11 +5,9 @@ import cocoapods.Sentry.SentryHttpStatusCodeRange
 import io.sentry.kotlin.multiplatform.BuildKonfig
 import io.sentry.kotlin.multiplatform.CocoaSentryEvent
 import io.sentry.kotlin.multiplatform.CocoaSentryOptions
-import io.sentry.kotlin.multiplatform.CocoaTransactionContextProvider
 import io.sentry.kotlin.multiplatform.SamplingContext
 import io.sentry.kotlin.multiplatform.SentryEvent
 import io.sentry.kotlin.multiplatform.SentryOptions
-import io.sentry.kotlin.multiplatform.TransactionContextAdapter
 import io.sentry.kotlin.multiplatform.nsexception.dropKotlinCrashEvent
 import kotlinx.cinterop.convert
 import platform.Foundation.NSNumber
@@ -78,9 +76,7 @@ internal fun CocoaSentryOptions.applyCocoaBaseOptions(options: SentryOptions) {
 
     tracesSampler = {
         it?.let { context ->
-            val cocoaTransactionContext = CocoaTransactionContextProvider(context.transactionContext)
-            val transactionContext = TransactionContextAdapter(cocoaTransactionContext)
-            val samplingContext = SamplingContext(transactionContext)
+            val samplingContext = SamplingContext(context.transactionContext)
             // returns null if KMP tracesSampler is null
             val sampleRate = options.tracesSampler?.invoke(samplingContext)
             sampleRate?.let { unwrappedSampleRate ->

@@ -58,18 +58,11 @@ internal actual object SentryBridge {
     }
 
     actual fun startTransaction(name: String, operation: String): Span {
-        val jvmTransaction = Sentry.startTransaction(name, operation)
-        return JvmSpanProvider(jvmTransaction)
+        return Sentry.startTransaction(name, operation)
     }
 
     actual fun startTransaction(name: String, operation: String, bindToScope: Boolean): Span {
-        val jvmTransaction = Sentry.startTransaction(name, operation, bindToScope)
-        return JvmSpanProvider(jvmTransaction)
-    }
-
-    actual fun getSpan(): Span? {
-        val jvmSpan = Sentry.getSpan()
-        return jvmSpan?.let { JvmSpanProvider(it) }
+        return Sentry.startTransaction(name, operation, bindToScope)
     }
 
     actual fun close() {

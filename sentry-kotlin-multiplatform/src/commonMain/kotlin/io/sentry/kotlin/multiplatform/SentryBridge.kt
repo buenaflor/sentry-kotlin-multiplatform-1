@@ -31,7 +31,5 @@ internal expect object SentryBridge {
 
     fun startTransaction(name: String, operation: String, bindToScope: Boolean): Span
 
-    fun getSpan(): Span?
-
     fun close()
 }
