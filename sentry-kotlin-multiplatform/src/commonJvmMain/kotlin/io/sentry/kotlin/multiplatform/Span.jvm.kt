@@ -4,7 +4,6 @@ import io.sentry.kotlin.multiplatform.protocol.SpanId
 
 public actual typealias Span = io.sentry.ISpan
 
-/** The span operation. */
 public actual val Span.operation: String get() = operation
 
 public actual val Span.description: String? get() = description

@@ -2,6 +2,7 @@ package sentry.kmp.demo.models
 
 import io.sentry.kotlin.multiplatform.Sentry
 import io.sentry.kotlin.multiplatform.SentryLevel
+import io.sentry.kotlin.multiplatform.finish
 import io.sentry.kotlin.multiplatform.protocol.Breadcrumb
 
 class LoginException(message: String) : Exception(message)

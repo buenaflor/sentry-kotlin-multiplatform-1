@@ -13,10 +13,10 @@ public expect val SpanContext.operation: String
 public expect val SpanContext.traceId: SentryId
 
 /** The unique identifier of the span.*/
-public expect val SpanContext.spanId: SpanId
+public expect val SpanContext.spanIdentifier: SpanId
 
 /** The unique identifier of the span's parent, if any.*/
-public expect val SpanContext.parentSpanId: SpanId?
+public expect val SpanContext.parentSpanIdentifier: SpanId?
 
 /** Indicates if the span is sampled.*/
 /**

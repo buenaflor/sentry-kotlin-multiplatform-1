@@ -1,5 +1,8 @@
 package io.sentry.kotlin.multiplatform.utils
 
+/**
+ * Contains a set of utility functions for Strings.
+ */
 public expect class StringUtils {
     public companion object {
         /**

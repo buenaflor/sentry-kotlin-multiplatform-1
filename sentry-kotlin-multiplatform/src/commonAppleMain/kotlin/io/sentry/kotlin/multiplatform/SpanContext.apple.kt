@@ -13,12 +13,11 @@ public actual val SpanContext.operation: String get() = operation()
 public actual val SpanContext.traceId: SentryId get() = SentryId(traceId().toString())
 
 /** The unique identifier of the span.*/
-public actual val SpanContext.spanId: SpanId get() = SpanId(spanId().toString())
+public actual val SpanContext.spanIdentifier: SpanId get() = SpanId(spanId().toString())
 
 /** The unique identifier of the span's parent, if any.*/
-public actual val SpanContext.parentSpanId: SpanId? get() = parentSpanId?.let { SpanId(it.toString()) }
+public actual val SpanContext.parentSpanIdentifier: SpanId? get() = parentSpanId?.let { SpanId(it.toString()) }
 
-/** Indicates if the span is sampled.*/
 /**
  * Indicates if the span is sampled.
  */
@@ -33,4 +32,3 @@ public actual val SpanContext.isSampled: Boolean? get() = sampled().toBoolean()
  * consistent across instances of the span.
  */
 public actual val SpanContext.description: String? get() = description()
-

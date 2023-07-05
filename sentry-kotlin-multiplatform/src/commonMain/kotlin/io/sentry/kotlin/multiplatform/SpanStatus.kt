@@ -1,5 +1,8 @@
 package io.sentry.kotlin.multiplatform
 
+/**
+ * Represents the status of the span.
+ */
 public expect enum class SpanStatus {
     /** Not an error, returned on success.  */
     OK,

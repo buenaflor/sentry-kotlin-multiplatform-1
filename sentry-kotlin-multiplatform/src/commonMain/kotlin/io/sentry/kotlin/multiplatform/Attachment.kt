@@ -32,5 +32,3 @@ public expect class Attachment {
 
     public constructor(pathname: String, filename: String, contentType: String?)
 }
-
-public class MyHint : Exception()

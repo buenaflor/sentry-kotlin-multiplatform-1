@@ -28,7 +28,7 @@ class TransactionIntegrationTest : BaseSentryTest() {
         sentryInit {
             it.dsn = fakeDsn
             it.tracesSampler = { context ->
-                actualSpanId = context.transactionContext.spanId.toString()
+                actualSpanId = context.transactionContext.spanIdentifier.toString()
                 null
             }
         }

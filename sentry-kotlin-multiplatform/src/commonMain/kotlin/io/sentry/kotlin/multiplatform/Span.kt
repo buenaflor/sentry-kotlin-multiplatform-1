@@ -2,11 +2,29 @@ package io.sentry.kotlin.multiplatform
 
 import io.sentry.kotlin.multiplatform.protocol.SpanId
 
+/**
+ * Represents performance monitoring Span.
+ */
 public expect interface Span
 
+/**
+ * The span operation.
+ */
 public expect val Span.operation: String
+
+/**
+ * The span description.
+ */
 public expect val Span.description: String?
+
+/**
+ * The span id.
+ */
 public expect val Span.spanId: SpanId
+
+/**
+ * The parent span id.
+ */
 public expect val Span.parentSpanId: SpanId?
 
 /**

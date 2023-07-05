@@ -5,7 +5,6 @@ import io.sentry.kotlin.multiplatform.utils.StringUtils
 import platform.Foundation.NSUUID
 
 public actual class SpanId public actual constructor(value: String) {
-
     private val value: String = CocoaSpanId.empty.toString()
 
     public actual constructor() : this(NSUUID())

@@ -9,9 +9,9 @@ public actual val SpanContext.operation: String get() = operation
 
 public actual val SpanContext.traceId: SentryId get() = SentryId(traceId.toString())
 
-public actual val SpanContext.spanId: SpanId get() = spanId
+public actual val SpanContext.spanIdentifier: SpanId get() = spanId
 
-public actual val SpanContext.parentSpanId: SpanId? get() = parentSpanId
+public actual val SpanContext.parentSpanIdentifier: SpanId? get() = parentSpanId
 
 public actual val SpanContext.isSampled: Boolean? get() = sampled
 

@@ -2,10 +2,18 @@
 <SmellBaseline>
   <ManuallySuppressedIssues/>
   <CurrentIssues>
+    <ID>CyclomaticComplexMethod:SpanStatusExtensions.kt$internal fun JvmSpanStatus.toKmp(): SpanStatus</ID>
+    <ID>CyclomaticComplexMethod:SpanStatusExtensions.kt$internal fun SpanStatus.toCocoa(): CocoaSpanStatus</ID>
+    <ID>CyclomaticComplexMethod:SpanStatusExtensions.kt$internal fun SpanStatus.toJvm(): JvmSpanStatus</ID>
+    <ID>LongMethod:SentryOptionsExtensions.apple.kt$internal fun CocoaSentryOptions.applyCocoaBaseOptions(options: SentryOptions)</ID>
+    <ID>MagicNumber:SpanId.apple.kt$SpanId$16</ID>
     <ID>SwallowedException:CocoaScopeProvider.kt$CocoaScopeProvider$e: Throwable</ID>
     <ID>SwallowedException:SentryLevel.kt$SentryLevel.Companion$throwable: Throwable</ID>
     <ID>TooGenericExceptionCaught:CocoaScopeProvider.kt$CocoaScopeProvider$e: Throwable</ID>
     <ID>TooGenericExceptionCaught:SentryLevel.kt$SentryLevel.Companion$throwable: Throwable</ID>
     <ID>TooGenericExceptionThrown:SentryKMP.kt$Sentry$throw RuntimeException("Uncaught Exception from Kotlin Multiplatform.")</ID>
+    <ID>UnusedPrivateMember:SpanId.kt$SpanId$value: String</ID>
+    <ID>UtilityClassWithPublicConstructor:StringUtils.jvm.kt$StringUtils</ID>
+    <ID>UtilityClassWithPublicConstructor:StringUtils.kt$StringUtils</ID>
   </CurrentIssues>
 </SmellBaseline>

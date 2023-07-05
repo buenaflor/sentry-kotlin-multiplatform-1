@@ -25,24 +25,3 @@ internal fun SpanStatus.toCocoa(): CocoaSpanStatus {
         }
     }
 }
-
-internal fun CocoaSpanStatus.toKmp(): SpanStatus {
-    return when (this) {
-        CocoaSpanStatus.kSentrySpanStatusAborted -> SpanStatus.ABORTED
-        CocoaSpanStatus.kSentrySpanStatusAlreadyExists -> SpanStatus.ALREADY_EXISTS
-        CocoaSpanStatus.kSentrySpanStatusCancelled -> SpanStatus.CANCELLED
-        CocoaSpanStatus.kSentrySpanStatusDataLoss -> SpanStatus.DATA_LOSS
-        CocoaSpanStatus.kSentrySpanStatusDeadlineExceeded -> SpanStatus.DEADLINE_EXCEEDED
-        CocoaSpanStatus.kSentrySpanStatusFailedPrecondition -> SpanStatus.FAILED_PRECONDITION
-        CocoaSpanStatus.kSentrySpanStatusInvalidArgument -> SpanStatus.INVALID_ARGUMENT
-        CocoaSpanStatus.kSentrySpanStatusNotFound -> SpanStatus.NOT_FOUND
-        CocoaSpanStatus.kSentrySpanStatusOk -> SpanStatus.OK
-        CocoaSpanStatus.kSentrySpanStatusOutOfRange -> SpanStatus.OUT_OF_RANGE
-        CocoaSpanStatus.kSentrySpanStatusPermissionDenied -> SpanStatus.PERMISSION_DENIED
-        CocoaSpanStatus.kSentrySpanStatusResourceExhausted -> SpanStatus.RESOURCE_EXHAUSTED
-        CocoaSpanStatus.kSentrySpanStatusUnauthenticated -> SpanStatus.UNAUTHENTICATED
-        CocoaSpanStatus.kSentrySpanStatusUnavailable -> SpanStatus.UNAVAILABLE
-        CocoaSpanStatus.kSentrySpanStatusUnimplemented -> SpanStatus.UNIMPLEMENTED
-        else -> SpanStatus.UNKNOWN
-    }
-}
