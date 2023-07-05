@@ -18,7 +18,6 @@ public expect val SpanContext.spanIdentifier: SpanId
 /** The unique identifier of the span's parent, if any.*/
 public expect val SpanContext.parentSpanIdentifier: SpanId?
 
-/** Indicates if the span is sampled.*/
 /**
  * Indicates if the span is sampled.
  */
