@@ -19,4 +19,18 @@ public actual val SpanContext.spanId: SpanId get() = SpanId(spanId().toString())
 public actual val SpanContext.parentSpanId: SpanId? get() = parentSpanId?.let { SpanId(it.toString()) }
 
 /** Indicates if the span is sampled.*/
-public actual val SpanContext.sampled: Boolean? get() = sampled().toBoolean()
+/**
+ * Indicates if the span is sampled.
+ */
+// NOTE: It's called isSampled so it doesn't clash with the existing sampled variable in the
+// Java SpanContext and Cocoa SentrySpanContext due to their different expected types.
+// Java requires a Boolean? while Cocoa requires a SamplingDecision which is an enum.
+// You cannot commonize those in an expect so it won't work in this actual typealias.
+public actual val SpanContext.isSampled: Boolean? get() = sampled().toBoolean()
+
+/**
+ * Longer description of the span's operation, which uniquely identifies the span but is
+ * consistent across instances of the span.
+ */
+public actual val SpanContext.description: String? get() = description()
+

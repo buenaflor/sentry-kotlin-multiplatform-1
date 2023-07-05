@@ -8,4 +8,4 @@ public actual typealias TransactionContext = cocoapods.Sentry.SentryTransactionC
 
 public actual val TransactionContext.name: String get() = name
 public actual val TransactionContext.transactionNameSource: TransactionNameSource get() = nameSource().toKmpTransactionNameSource()
-public actual val TransactionContext.parentSampled: Boolean? get() = parentSampled().toBoolean()
+public actual val TransactionContext.isParentSampled: Boolean? get() = parentSampled().toBoolean()

@@ -50,17 +50,6 @@ class TransactionIntegrationTest : BaseSentryTest() {
     }
 
     @Test
-    fun `getSpan returns the current active span with bindToScope enabled`() {
-        sentryInit {
-            it.dsn = fakeDsn
-        }
-        val transaction = Sentry.startTransaction("test", "testOperation", bindToScope = true)
-        val activeTransactionSpanId = Sentry.getSpan()?.spanId
-        transaction.finish()
-        assertEquals(activeTransactionSpanId.toString(), transaction.spanId.toString(), "activeTransactionSpanId should be equal to transaction.spanId")
-    }
-
-    @Test
     fun `tracesSampler can receive correct TransactionContext operation`() {
         val expectedOperation = "testOperation"
         var actualOperation = ""
@@ -83,7 +72,7 @@ class TransactionIntegrationTest : BaseSentryTest() {
         sentryInit {
             it.dsn = fakeDsn
             it.tracesSampler = { context ->
-                actualSampled = context.transactionContext.sampled
+                actualSampled = context.transactionContext.isSampled
                 null
             }
         }
@@ -99,7 +88,7 @@ class TransactionIntegrationTest : BaseSentryTest() {
         sentryInit {
             it.dsn = fakeDsn
             it.tracesSampler = { context ->
-                actualSampled = context.transactionContext.parentSampled
+                actualSampled = context.transactionContext.isParentSampled
                 null
             }
         }

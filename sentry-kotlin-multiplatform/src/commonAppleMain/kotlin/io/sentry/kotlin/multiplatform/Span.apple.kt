@@ -23,7 +23,7 @@ public actual val Span.parentSpanId: SpanId? get() = parentSpanId?.let { SpanId(
  * @param operation - new span operation name
  * @return a new transaction span
  */
-public actual fun Span.startChild(operation: String): Span = startChild(operation)
+public actual fun Span.startChild(operation: String): Span = startChildWithOperation(operation)
 
 /**
  * Starts a child Span.

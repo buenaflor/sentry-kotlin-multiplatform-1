@@ -6,4 +6,4 @@ public actual typealias TransactionContext = io.sentry.TransactionContext
 
 public actual val TransactionContext.name: String get() = name
 public actual val TransactionContext.transactionNameSource: TransactionNameSource get() = transactionNameSource
-public actual val TransactionContext.parentSampled: Boolean? get() = parentSampled
+public actual val TransactionContext.isParentSampled: Boolean? get() = parentSampled

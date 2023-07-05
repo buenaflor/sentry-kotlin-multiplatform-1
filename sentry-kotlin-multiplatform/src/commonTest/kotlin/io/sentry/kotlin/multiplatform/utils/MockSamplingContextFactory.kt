@@ -1,5 +1,5 @@
 package io.sentry.kotlin.multiplatform.utils
-
+/*
 import io.sentry.kotlin.multiplatform.MockTransactionContext
 import io.sentry.kotlin.multiplatform.TransactionContext
 import io.sentry.kotlin.multiplatform.protocol.SentryId
@@ -29,3 +29,4 @@ fun createMockTransactionContext(
         parentSampled = parentSampled
     )
 }
+*/

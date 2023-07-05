@@ -10,8 +10,3 @@ internal fun SentrySampleDecision.toBoolean(): Boolean = when (this) {
         false
     }
 }
-
-internal fun Boolean.toSampleDecision(): SentrySampleDecision = when (this) {
-    false -> SentrySampleDecision.kSentrySampleDecisionNo
-    true -> SentrySampleDecision.kSentrySampleDecisionYes
-}
